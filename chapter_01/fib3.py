@@ -15,5 +15,9 @@ def fib3(y):
 
 
 if __name__ == "__main__":
-    print(fib3(50))
-    print("able to calculate fibonacci(50) ^ using memorization technique")
+    n_start = 0
+    n_stop = 150
+    
+    print("the fibonacci sequence to " + str(n_stop))
+    for i in range(n_start, n_stop):
+        print(fib3(i))
