@@ -6,6 +6,14 @@ from typing import Dict
 # using key value pairs
 memo: Dict[int, int] = {0:0, 1:1}
 
+def fib3(y):
+    if y not in memo:
+        memo[y] = fib3(y-1) + fib3(y-2)
+
+    return memo[y]
+
+
+
 if __name__ == "__main__":
-    print("key: 0, val: " + str(memo[0]))
-    print("key: 1, val: " + str(memo[1]))
+    print(fib3(50))
+    print("able to calculate fibonacci(50) ^ using memorization technique")
