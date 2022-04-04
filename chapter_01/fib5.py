@@ -12,8 +12,4 @@ def fib5(n):
 
 if __name__ == "__main__":
     print("fib5")
-<<<<<<< Updated upstream
     print(fib5(50))
-=======
-    print("hello from Acode")
->>>>>>> Stashed changes
