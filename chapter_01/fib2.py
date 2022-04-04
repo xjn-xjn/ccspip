@@ -1,4 +1,4 @@
-def fib2(x):
+def fib2(x: int) -> int:
     # establish base case to prevent infinite recursion
     if x < 2:
         return x

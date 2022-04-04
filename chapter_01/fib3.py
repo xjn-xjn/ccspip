@@ -6,7 +6,7 @@ from typing import Dict
 # using key value pairs
 memo: Dict[int, int] = {0:0, 1:1}
 
-def fib3(y):
+def fib3(y: int) -> int:
     if y not in memo:
         memo[y] = fib3(y-1) + fib3(y-2)
 
