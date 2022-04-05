@@ -14,4 +14,6 @@ if __name__ == "__main__":
   for i in fib6(50):
     print(i)
     
-# TODO: CLEANUP
+# TODO: CLEANUP 
+# TODO: lint other files
+# TODO: INSTALL LINTER TERMUX
