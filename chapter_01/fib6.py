@@ -1,9 +1,15 @@
 from typing import Generator
 
-def fib6(n) -> Generator [int, None, None]:
-  yield 0
+def fib6(n: int) -> Generator [int, None, None]:
+  yield 0  # special case
+  if n > 0: yield 1 # special case
+  last: int = 0 # fib(0)
+  next : int = 1 # fib(1)
   
-# TODO : vonvert fib 5 to generator
+  for _ in range(1, n):
+    last, next = next, last + next
+    yield next # main generation step
   
 if __name__ == "__main__":
-  print(fib6(50))
+  for i in fib6(50):
+    print(i)
