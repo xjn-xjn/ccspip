@@ -4,3 +4,5 @@ a directory for following the python examples contained within Classic Computer 
 
 TODO: finish readme
 TODO: write run instructions and dev env setup
+
+need to install pip env and python3
