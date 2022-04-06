@@ -8,7 +8,6 @@ def make_array(j: int, k: int) -> list:
   Returns
     an list of lists representing an array is returned consisting of 0 through max number array can hold.
   """
-  
   element = 0  # our initial array element
   array = []
   # loop through rows
