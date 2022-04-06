@@ -22,9 +22,7 @@ def make_array(j: int, k: int) -> list:
       element += 1
     # append row to array
     array.append(new_row)
-      
-    
-  
+
   return array
   
   
