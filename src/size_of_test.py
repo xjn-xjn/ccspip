@@ -1,3 +1,5 @@
+import sys
+
 def make_array(j: int, k: int) -> list:
   """ Creates an incremented array of size j, k.
   Args:
@@ -29,4 +31,11 @@ def make_array(j: int, k: int) -> list:
   
 if __name__ == "__main__":
   my_array = make_array(1, 2)
-  print(my_array)
+  # print(my_array)
+  print("Array of size 1x2")
+  print("size in bits: " + str(sys.getsizeof(my_array)))
+  
+  my_array = make_array(18, 20)
+  # print(my_array)
+  print("Array of size 18x20")
+  print("size in bits: " + str(sys.getsizeof(my_array)))
