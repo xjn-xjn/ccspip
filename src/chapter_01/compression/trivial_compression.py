@@ -1,3 +1,6 @@
+#TODO: LINT BJTCH
+
+
 #TODO: write script
 class CompressedGene:
   def __init__(self, gene: str) -> None:
