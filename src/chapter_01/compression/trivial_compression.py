@@ -31,5 +31,5 @@ class CompressedGene:
 	
         
 if __name__ == "__main__":
-	# test: CompressedGene = CompressedGene("bitch")
-	test: CompressedGene = CompressedGene("atcgcgtaaattatttattatgcccgtatttat")
+	test: CompressedGene = CompressedGene("bitch")
+	# test: CompressedGene = CompressedGene("atcgcgtaaattatttattatgcccgtatttat")
