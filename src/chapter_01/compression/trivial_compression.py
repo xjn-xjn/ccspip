@@ -5,6 +5,7 @@
 class CompressedGene:
 	def __init__(self, gene: str) -> None:
 		self._compress(gene)
+
 	def _compress(self, gene: str) -> None:
 		# print(gene)
 		printy = ""
@@ -25,11 +26,23 @@ class CompressedGene:
 				printy += "11"
 			else:
 				raise ValueError("Invalid Nucleotide:{}".format(nucleotide))
-			
-		# print(self.bit_string)
+		print("bit string gene representation:")
 		print(printy)
+
+		
+
+	# TODO: write decompression method
+	def decompress(self) -> None:
+		print("decompression method run")
 	
         
 if __name__ == "__main__":
-	test: CompressedGene = CompressedGene("bitch")
-	# test: CompressedGene = CompressedGene("atcgcgtaaattatttattatgcccgtatttat")
+	# create gene sequence
+	# gene = "bitch"  # this should raise a value error
+	gene = "atcgtcgtagatcgctagccgcgcgcgcatagctagcttctagactgatcagcatacg"
+
+	# compress gene sequence
+	test: CompressedGene = CompressedGene(gene)
+
+	# decompress gene sequence
+	decompressed_gene: str = test.decompress()
