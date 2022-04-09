@@ -26,8 +26,12 @@ class CompressedGene:
 				printy += "11"
 			else:
 				raise ValueError("Invalid Nucleotide:{}".format(nucleotide))
+		print("gene sequence")
+		print(gene)
+		print()
 		print("bit string gene representation:")
 		print(printy)
+		print()
 
 		
 
