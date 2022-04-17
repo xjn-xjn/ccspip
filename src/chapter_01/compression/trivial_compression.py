@@ -1,15 +1,16 @@
-#TODO: LINT BJTCH
-
-
 #TODO: write script
 class CompressedGene:
 	def __init__(self, gene: str) -> None:
 		self._compress(gene)
 
 	def _compress(self, gene: str) -> None:
-		# print(gene)
-		printy = ""
-		self.bit_string: int = 1	# sentinel
+
+        # TODO: remove
+		printy = ""  # holds a string representation of the bit string
+
+		self.bit_string: int = 1	# start bit string with sentinel
+
+        # loop through the characters in the gene string
 		for nucleotide in gene.upper():
 			self.bit_string <<= 2    # shift left two bit_string
 			if nucleotide == "A":    # change last two bits to 00
@@ -25,7 +26,11 @@ class CompressedGene:
 				self.bit_string |= 0b11
 				printy += "11"
 			else:
+                # raise a value error if any characters becides A, C, G, or T are found
 				raise ValueError("Invalid Nucleotide:{}".format(nucleotide))
+
+
+        # print out some info for debugging TODO: remove
 		print("gene sequence")
 		print(gene)
 		print()
