@@ -1,12 +1,12 @@
 # TODO: write doc string
 
-#TODO: write script
 class CompressedGene:
+    """Class to compress/decompress a gene string into and from a binary string."""
     def __init__(self, gene: str) -> None:
         self._compress(gene)
 
     def _compress(self, gene: str) -> None:
-
+        """compress the gene string"""
         # TODO: remove
         self.bit_string: int = 1	# start bit string with sentinel
 
@@ -27,6 +27,7 @@ class CompressedGene:
 
 	# TODO: write decompression method
     def decompress(self) -> str:
+        """decompress the bit string"""
         gene: str = ""
         for i in range(0, self.bit_string.bit_length() - 1, 2):  # -1 to include sentinal
             bits: int = self.bit_string >> i & 0b11 # get just 2 relevant bits
@@ -49,9 +50,10 @@ class CompressedGene:
 if __name__ == "__main__":
     from sys import getsizeof
     original: str = "TAGGATAATACGGCCCGTATTATATAGGCGCGCGCTATATATATATATACACAATACATAGATAGAGAGGAGCGCGCGCTCTCTCACACACAGAAGAGAGAGAGAGCGCGTGTAGATTAGTAC" * 100
-
-    print("original is {} bytes".format(getsizeof(original)))
+    original_size = getsizeof(original)
     compressed: CompressedGene = CompressedGene(original)
-    print("compressed is {} bytes".format(getsizeof(compressed.bit_string)))
-    print(compressed)
-    print("original and decompressed are the same: {}".format(original == compressed.decompress()))
+    compressed_size = getsizeof(compressed.bit_string)
+    bool_same = original == compressed.decompress()
+    print(f"original is {original_size} bytes")
+    print(f"compressed is {compressed_size} bytes")
+    print(f"original and decompressed are the same: {bool_same}")
