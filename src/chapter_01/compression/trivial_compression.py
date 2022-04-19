@@ -1,3 +1,5 @@
+# TODO: write doc string
+
 #TODO: write script
 class CompressedGene:
     def __init__(self, gene: str) -> None:
@@ -39,18 +41,17 @@ class CompressedGene:
             else:
                 raise ValueError("Invalid bits:{}".format(bits))
         return gene[::-1]  # returned reversed string using slicing
-    
+
     def __str__(self) -> str:  # string representation for pretty printing
         return self.decompress()
-	
-       
+
+
 if __name__ == "__main__":
     from sys import getsizeof
     original: str = "TAGGATAATACGGCCCGTATTATATAGGCGCGCGCTATATATATATATACACAATACATAGATAGAGAGGAGCGCGCGCTCTCTCACACACAGAAGAGAGAGAGAGCGCGTGTAGATTAGTAC" * 100
-    
+
     print("original is {} bytes".format(getsizeof(original)))
     compressed: CompressedGene = CompressedGene(original)
     print("compressed is {} bytes".format(getsizeof(compressed.bit_string)))
     print(compressed)
     print("original and decompressed are the same: {}".format(original == compressed.decompress()))
-
